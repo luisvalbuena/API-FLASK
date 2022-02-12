@@ -1,0 +1,32 @@
+@hostname = 
+@id_user1 = 6207e1fa73a9a651f2e36b7a
+@id_user2 = 6207e700a57e18e101a11307
+
+### insertando usuario
+POST http://{{hostname}}/users
+Content-Type: application/json
+
+{
+    "name":"jhon doe",
+    "email":"jhondoe.com",
+    "password":"12345"
+}
+
+### mostrar usuarios
+GET http://{{hostname}}/users
+
+### mostrar un usuario
+GET http://{{hostname}}/users/{{id_user1}}
+
+### eliminar un usuario
+DELETE http://{{hostname}}/users/{{id_user2}}
+
+### actualizando usuario
+PUT http://{{hostname}}/users/{{id_user1}}
+Content-Type: application/json
+
+{
+    "name":"jimm doe",
+    "email":"jimmdoe.com",
+    "password":"12345"
+}
